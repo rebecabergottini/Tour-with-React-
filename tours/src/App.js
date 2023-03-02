@@ -1,14 +1,23 @@
+import React, { useState, useEffect } from 'react';
 import './App.css';
-// import React, { useState, useEffect } from 'react';
 // import Loading from "./componentes/Loading";
-// const url = 'https://course-api.com/react-tours-project';
+// import Tours from "./componentes/Tour";
+const url = 'https://course-api.com/react-tours-project';
 
 function App() {
-  return (
-    <div className="App">
-     <div className='tittle'><h1>Our Tours</h1></div>
-    </div>
-  );
+  
+  const [loading, setloading] = useState(true);
+  
+  const [tours, setTours] = useState([]);
+  if(loading) {
+    return (
+      <main>
+        <Loading />
+      </main>
+    );
+  }
+
+  return <h2>tours projects setup</h2>
 }
 
 export default App;
